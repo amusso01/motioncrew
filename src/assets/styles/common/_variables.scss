@@ -1,0 +1,162 @@
+/**
+  * Variables
+  * Contains re-usable variables like colors, sizes, breakpoints etc.
+  * Normally, you don't have to change anything in essentials.css and general.css
+  * because you'll define the basic-values here.
+  *
+  *
+  */
+// =============== RESPONSIVE ================
+
+$breakpoints: (
+	"phone": 640px,
+	"phone-land": 920px,
+	"tablet": 1140px,
+	"desktop": 1360px,
+	"wideScreen": 1490px,
+) !default;
+
+@import "~include-media/dist/include-media";
+// EXAMPLE
+// @include media(">phone", "<=tablet") {
+//   width: 50%;
+//   }
+
+/*==================================================================================
+  FONT
+==================================================================================*/
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap");
+
+@font-face {
+	font-family: "neue-haas-grotesk-display";
+	src: url("https://use.typekit.net/af/7c6302/00000000000000007735bb55/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3")
+			format("woff2"),
+		url("https://use.typekit.net/af/7c6302/00000000000000007735bb55/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3")
+			format("woff"),
+		url("https://use.typekit.net/af/7c6302/00000000000000007735bb55/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3")
+			format("opentype");
+	font-display: auto;
+	font-style: normal;
+	font-weight: 300;
+	font-stretch: normal;
+}
+
+@font-face {
+	font-family: "neue-haas-grotesk-display";
+	src: url("https://use.typekit.net/af/2724c2/00000000000000007735bb48/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3")
+			format("woff2"),
+		url("https://use.typekit.net/af/2724c2/00000000000000007735bb48/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3")
+			format("woff"),
+		url("https://use.typekit.net/af/2724c2/00000000000000007735bb48/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3")
+			format("opentype");
+	font-display: auto;
+	font-style: normal;
+	font-weight: 400;
+	font-stretch: normal;
+}
+
+@font-face {
+	font-family: "neue-haas-grotesk-display";
+	src: url("https://use.typekit.net/af/32e980/00000000000000007735bb53/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3")
+			format("woff2"),
+		url("https://use.typekit.net/af/32e980/00000000000000007735bb53/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3")
+			format("woff"),
+		url("https://use.typekit.net/af/32e980/00000000000000007735bb53/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3")
+			format("opentype");
+	font-display: auto;
+	font-style: italic;
+	font-weight: 400;
+	font-stretch: normal;
+}
+
+@font-face {
+	font-family: "neue-haas-grotesk-display";
+	src: url("https://use.typekit.net/af/174ae3/00000000000000007735bb5a/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3")
+			format("woff2"),
+		url("https://use.typekit.net/af/174ae3/00000000000000007735bb5a/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3")
+			format("woff"),
+		url("https://use.typekit.net/af/174ae3/00000000000000007735bb5a/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3")
+			format("opentype");
+	font-display: auto;
+	font-style: normal;
+	font-weight: 500;
+	font-stretch: normal;
+}
+
+@font-face {
+	font-family: "neue-haas-grotesk-display";
+	src: url("https://use.typekit.net/af/c7a282/00000000000000007735bb62/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3")
+			format("woff2"),
+		url("https://use.typekit.net/af/c7a282/00000000000000007735bb62/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3")
+			format("woff"),
+		url("https://use.typekit.net/af/c7a282/00000000000000007735bb62/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3")
+			format("opentype");
+	font-display: auto;
+	font-style: normal;
+	font-weight: 600;
+	font-stretch: normal;
+}
+
+@font-face {
+	font-family: "neue-haas-grotesk-display";
+	src: url("https://use.typekit.net/af/216c2e/00000000000000007735bb6a/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3")
+			format("woff2"),
+		url("https://use.typekit.net/af/216c2e/00000000000000007735bb6a/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3")
+			format("woff"),
+		url("https://use.typekit.net/af/216c2e/00000000000000007735bb6a/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3")
+			format("opentype");
+	font-display: auto;
+	font-style: normal;
+	font-weight: 700;
+	font-stretch: normal;
+}
+
+@font-face {
+	font-family: "neue-haas-grotesk-display";
+	src: url("https://use.typekit.net/af/bbb0f9/00000000000000007735bb6e/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n9&v=3")
+			format("woff2"),
+		url("https://use.typekit.net/af/bbb0f9/00000000000000007735bb6e/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n9&v=3")
+			format("woff"),
+		url("https://use.typekit.net/af/bbb0f9/00000000000000007735bb6e/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n9&v=3")
+			format("opentype");
+	font-display: auto;
+	font-style: normal;
+	font-weight: 900;
+	font-stretch: normal;
+}
+
+$text__fontname: "neue-haas-grotesk-display", sans-serif; // Normal 400, Medium 500, Bold 700
+$header__fontname: "neue-haas-grotesk-display", sans-serif; // Normal 400, Medium 500, Bold 700
+$monospace__fontname: "IBM Plex Mono", monospace; // 300,400,500,700
+
+/*==================================================================================
+  COLORS
+==================================================================================*/
+
+/* from customiser root -> see function-customiser.php
+/––––––––––––––––––––––––*/
+$color__main: var(--main_color);
+$color__text: var(--text_color);
+$color__link: var(--link_color);
+$color__link-hover: var(--link_color_hover);
+$color__footerBg: var(--footer-color);
+$color__bright: #ffffff;
+$color__dark: #000000;
+
+/*==================================================================================
+  BUTTONS
+==================================================================================*/
+
+/*==================================================================================
+  TYPOGRAPHY
+==================================================================================*/
+
+$text__h1: var(--text-h1);
+$text__h2: var(--text-h2);
+$text__h3: var(--text-h3);
+$text__h4: var(--text-h4);
+$text__h5: var(--text-h5);
+$text__h6: var(--text-h6);
+$text__p: var(--text-p);
+
+$font__weight: 400; //This is the global font-weight for text, link etc.. Specify header weight separetelly
