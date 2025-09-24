@@ -1,0 +1,71 @@
+.btn {
+	background-color: $color__link;
+	border-radius: 28px;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	transition: background-color 0.1s ease;
+
+	.btn_wrapper {
+		height: 55px;
+		overflow-y: hidden;
+	}
+
+	&:hover {
+		background-color: $color__dark;
+	}
+
+	.text-hover,
+	.text {
+		transition: 320ms all cubic-bezier(0.47, 1.64, 0.41, 0.8);
+	}
+
+	.text {
+		opacity: 1;
+		transform: translateY(0);
+		color: $color__bright;
+		.circle {
+			background-color: transparent;
+			border: 1px solid $color__bright;
+		}
+	}
+
+	.text-hover {
+		opacity: 0;
+		transform: translateY(23px);
+		color: $color__bright;
+		.circle {
+			background-color: #c3193a;
+		}
+	}
+
+	&:hover .text {
+		opacity: 0;
+		transform: translateY(-23px);
+	}
+
+	&:hover .text-hover {
+		opacity: 1;
+		transform: translateY(-23px);
+	}
+
+	a {
+		display: inline-block;
+		padding: 16px 58px;
+		font-family: $monospace__fontname;
+		font-size: 18px;
+		line-height: 23px;
+		font-weight: 500;
+		text-transform: uppercase;
+		@include media("<2xl") {
+			font-size: 16px;
+			line-height: 24px;
+		}
+	}
+	.circle {
+		display: inline-block;
+		width: 12px;
+		height: 12px;
+		border-radius: 12px;
+	}
+}

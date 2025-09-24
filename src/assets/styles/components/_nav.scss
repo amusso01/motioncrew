@@ -1,0 +1,134 @@
+$top-distance: 20px;
+$top-distance-sm: 18px;
+
+$header-height: 92px;
+$header-height-sm: 68px;
+
+.site-header {
+	@extend .content-block;
+
+	&__container {
+		min-height: calc($header-height + ($top-distance * 2));
+		display: flex;
+		align-items: center;
+		@include media("<2xl") {
+			min-height: calc($header-height-sm + ($top-distance-sm * 2));
+		}
+	}
+
+	.main-nav-btn {
+		width: 100%;
+		display: flex;
+		justify-content: flex-end;
+		@include media("<lg") {
+			display: none;
+		}
+	}
+
+	&__inner-wrapper {
+		left: 50%;
+		transform: translateX(-50%);
+		min-width: 560px;
+		top: $top-distance;
+
+		@include media("<2xl") {
+			min-width: 432px;
+		}
+
+		@include media("<sm") {
+			min-width: 345px;
+			top: $top-distance-sm;
+		}
+	}
+
+	&__inner {
+		padding: 0px 26px;
+		border-radius: 14px;
+		position: relative;
+		height: $header-height;
+
+		@include media("<2xl") {
+			padding: 0px 20px;
+			height: $header-height-sm;
+		}
+
+		@include media("<sm") {
+			padding: 0px 12px;
+		}
+	}
+
+	.main-nav-container {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100%;
+		z-index: 10;
+
+		.site-header__item.site-header__menu {
+			background-color: #fff;
+			border-radius: 14px;
+			padding: 0px 26px;
+
+			@include media("<lg") {
+				padding: 0px 16px;
+			}
+
+			@include media("<sm") {
+				padding: 0px 12px;
+			}
+
+			&.primary-menu {
+				margin-top: 6px;
+				padding-top: 26px;
+				padding-bottom: 16px;
+				min-height: 516px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				@include media("<lg") {
+					min-height: 436px;
+				}
+
+				.menu-item {
+					position: inherit;
+					a {
+						font-size: 50px;
+						line-height: 60px;
+						font-weight: 700;
+						text-transform: uppercase;
+						display: block;
+						margin-bottom: 5px;
+						text-align: center;
+					}
+					.menu-number {
+						font-family: $monospace__fontname;
+						font-size: 14px;
+						letter-spacing: 0.35px;
+						line-height: 18px;
+						font-weight: 300;
+						text-align: right;
+						width: 100%;
+						display: block;
+						transform: translateY(5px);
+					}
+				}
+			}
+
+			&.legal-menu {
+				margin-top: 6px;
+				padding-top: 22px;
+				padding-bottom: 22px;
+				.menu-item {
+					a {
+						font-family: $monospace__fontname;
+						font-size: 14px;
+						letter-spacing: 0.35px;
+						line-height: 18px;
+						font-weight: 300;
+						text-transform: uppercase;
+					}
+				}
+			}
+		}
+	}
+}

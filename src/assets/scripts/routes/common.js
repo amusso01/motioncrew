@@ -6,9 +6,6 @@ export default {
 
 		// kick off the polyfill!
 		smoothscroll.polyfill();
-
-		// Hamburger event listener
-		hamburger();
 	},
 
 	finalize() {
