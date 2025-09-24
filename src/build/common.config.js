@@ -2,10 +2,13 @@ const webpack = require("webpack");
 const path = require("path");
 
 module.exports = {
-	entry: [
-		path.resolve(__dirname, "../assets/scripts/main.js"),
-		path.resolve(__dirname, "../assets/styles/_main.scss"),
-	],
+	entry: {
+		main: [
+			path.resolve(__dirname, "../assets/scripts/main.js"),
+			path.resolve(__dirname, "../assets/styles/_main.scss"),
+		],
+		tailwind: path.resolve(__dirname, "../assets/styles/tailwind.js"),
+	},
 	performance: {
 		hints: false,
 	},

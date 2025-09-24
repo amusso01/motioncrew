@@ -15,6 +15,7 @@
     "clean": "rimraf dist/manifest.json dist/styles/*"
   },
   "dependencies": {
+    "@alpinejs/focus": "^3.15.0",
     "alpinejs": "^3.15.0",
     "include-media": "^1.4.10",
     "smoothscroll-polyfill": "^0.4.4"
@@ -22,6 +23,9 @@
   "devDependencies": {
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.0",
+    "@tailwindcss/forms": "^0.5.10",
+    "@tailwindcss/postcss": "^4.1.13",
+    "@tailwindcss/typography": "^0.5.18",
     "autoprefixer": "^10.4.0",
     "babel-loader": "^8.2.3",
     "browser-sync": "^2.27.7",
@@ -45,6 +49,7 @@
     "sass": "1.43.4",
     "sass-loader": "^12.3.0",
     "style-loader": "^3.3.1",
+    "tailwindcss": "^4.1.13",
     "terser-webpack-plugin": "^5.2.4",
     "webpack": "^5.61.0",
     "webpack-assets-manifest": "^5.0.6",

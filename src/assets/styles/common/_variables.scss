@@ -9,11 +9,11 @@
 // =============== RESPONSIVE ================
 
 $breakpoints: (
-	"phone": 640px,
-	"phone-land": 920px,
-	"tablet": 1140px,
-	"desktop": 1360px,
-	"wideScreen": 1490px,
+	"sm": 40rem,
+	"md": 48rem,
+	"lg": 64rem,
+	"xl": 85rem,
+	"2xl": 95rem,
 ) !default;
 
 @import "~include-media/dist/include-media";

@@ -60,7 +60,7 @@ module.exports = merge(commonConfig, {
 						options: {
 							sourceMap: false,
 							postcssOptions: {
-								path: "src/build/",
+								config: "src/build/",
 							},
 						},
 					},
@@ -68,6 +68,31 @@ module.exports = merge(commonConfig, {
 						loader: "sass-loader",
 						options: {
 							sourceMap: false,
+						},
+					},
+				],
+			},
+			{
+				test: /\.css$/,
+				use: [
+					{
+						loader: MiniCssExtractPlugin.loader,
+						options: {},
+					},
+					{
+						loader: "css-loader",
+						options: {
+							sourceMap: false,
+							url: false,
+						},
+					},
+					{
+						loader: "postcss-loader",
+						options: {
+							sourceMap: false,
+							postcssOptions: {
+								config: "src/build/",
+							},
 						},
 					},
 				],

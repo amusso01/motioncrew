@@ -8,6 +8,7 @@ import common from "./routes/common";
 // import about from "./routes/about";
 
 import Alpine from "alpinejs";
+import focus from "@alpinejs/focus";
 
 /** Populate Router instance with DOM routes */
 const routes = new Router({
@@ -22,6 +23,7 @@ const routes = new Router({
 document.addEventListener("DOMContentLoaded", function (event) {
 	window.Alpine = Alpine;
 
+	Alpine.plugin(focus);
 	Alpine.start();
 
 	routes.loadEvents();

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Setup
  * @author Andrea Musso
@@ -13,7 +14,7 @@
  * as indicating support for post thumbnails.
  */
 
- /*==================================================================================
+/*==================================================================================
  Table of Contents:
 –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
   1.0 THEME SETTINGS
@@ -30,7 +31,7 @@
 ==================================================================================*/
 
 
-if ( ! function_exists( 'foundry_setup' ) ) :
+if (! function_exists('foundry_setup')) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -46,63 +47,69 @@ if ( ! function_exists( 'foundry_setup' ) ) :
 
 	/* 1.1 ENQUEUE SCRIPTS/STYLES
 	/––––––––––––––––---––––––––*/
-	if ( ! function_exists( 'foundry_asset_path' ) ) :
-		function foundry_asset_path( $filename ) {
-	
-			$manifest_path  = dirname( dirname( __FILE__ ) ) . '/dist/manifest.json';
-	
-			if ( file_exists( $manifest_path ) ) {
-				$manifest = json_decode( file_get_contents( $manifest_path ), true );
+	if (! function_exists('foundry_asset_path')) :
+		function foundry_asset_path($filename)
+		{
+
+			$manifest_path  = dirname(dirname(__FILE__)) . '/dist/manifest.json';
+
+			if (file_exists($manifest_path)) {
+				$manifest = json_decode(file_get_contents($manifest_path), true);
 			} else {
 				$manifest = [];
 			}
-	
-			if ( array_key_exists( $filename, $manifest ) ) {
-				return $manifest[ $filename ];
+
+			if (array_key_exists($filename, $manifest)) {
+				return $manifest[$filename];
 			}
 			return $filename;
 		}
 	endif;
-	function foundry_scripts() {
-		
+	function foundry_scripts()
+	{
+
 		// Deregister guttenberg style
 		global $load_default_block_styles;
 		if (!$load_default_block_styles) :
-		wp_dequeue_style( 'wp-block-library' );
+			wp_dequeue_style('wp-block-library');
 		endif;
 
 		// STYLE
 
-		wp_register_style( 'root-styles', get_template_directory_uri() . '/dist/styles/root.css', array(), '1.0', 'all'  );
-	
-		wp_register_style( 'foundry-styles', get_template_directory_uri() . '/dist/styles/' . foundry_asset_path( 'main.css' ), array('root-styles'), '1.0', 'all' );
-		wp_enqueue_style( 'foundry-styles' );
-		
-		// SCRIPT
-		wp_dequeue_script( 'jquery' );
-		wp_deregister_script( 'jquery' );
-		wp_register_script( 'foundry-js', get_template_directory_uri() . '/dist/scripts/' . foundry_asset_path( 'main.js' ), array(), '1.0', true );
-		wp_enqueue_script( 'foundry-js' );
+		wp_register_style('root-styles', get_template_directory_uri() . '/dist/styles/root.css', array(), '1.0', 'all');
 
-		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-			wp_enqueue_script( 'comment-reply' );
+		wp_register_style('foundry-styles', get_template_directory_uri() . '/dist/styles/' . foundry_asset_path('main.css'), array('root-styles'), '1.0', 'all');
+		wp_enqueue_style('foundry-styles');
+
+		wp_register_style('tailwind-styles', get_template_directory_uri() . '/dist/styles/' . foundry_asset_path('tailwind.css'), array('foundry-styles'), '1.0', 'all');
+		wp_enqueue_style('tailwind-styles');
+
+		// SCRIPT
+		wp_dequeue_script('jquery');
+		wp_deregister_script('jquery');
+		wp_register_script('foundry-js', get_template_directory_uri() . '/dist/scripts/' . foundry_asset_path('main.js'), array(), '1.0', true);
+		wp_enqueue_script('foundry-js');
+
+		if (is_singular() && comments_open() && get_option('thread_comments')) {
+			wp_enqueue_script('comment-reply');
 		}
 	}
-	add_action( 'wp_enqueue_scripts', 'foundry_scripts' );
+	add_action('wp_enqueue_scripts', 'foundry_scripts');
 
 	/* 1.2 THEME SUPPORT
 	/––––––––––––––––––––––––*/
-	function foundry_setup() {
+	function foundry_setup()
+	{
 		/*
 			* Make theme available for translation.
 			* Translations can be filed in the /languages/ directory.
 			* If you're building a theme based on foundry, use a find and replace
 			* to change 'foundry' to the name of your theme in all the template files.
 			*/
-		load_theme_textdomain( 'foundry', get_template_directory() . '/languages' );
+		load_theme_textdomain('foundry', get_template_directory() . '/languages');
 
 		// Add default posts and comments RSS feed links to head.
-		add_theme_support( 'automatic-feed-links' );
+		add_theme_support('automatic-feed-links');
 
 		/*
 			* Let WordPress manage the document title.
@@ -110,24 +117,24 @@ if ( ! function_exists( 'foundry_setup' ) ) :
 			* hard-coded <title> tag in the document head, and expect WordPress to
 			* provide it for us.
 			*/
-		add_theme_support( 'title-tag' );
+		add_theme_support('title-tag');
 
 		/*
 			* Enable support for Post Thumbnails on posts and pages.
 			*
 			* @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 			*/
-			add_theme_support( 'post-thumbnails' );
-			add_image_size( 'admin_thumb', 100, 100, true );
-			add_image_size( 'size_200', 200 );
-			add_image_size( 'size_400', 400 );
-			add_image_size( 'size_600', 600 );
-			add_image_size( 'size_800', 800 );
-			add_image_size( 'size_1000', 1000 );
-			add_image_size( 'size_1200', 1200 );
-			add_image_size( 'size_1400', 1400 );
-			add_image_size( 'size_1600', 1600 );
-			add_image_size( 'size_1800', 1800 );
+		add_theme_support('post-thumbnails');
+		add_image_size('admin_thumb', 100, 100, true);
+		add_image_size('size_200', 200);
+		add_image_size('size_400', 400);
+		add_image_size('size_600', 600);
+		add_image_size('size_800', 800);
+		add_image_size('size_1000', 1000);
+		add_image_size('size_1200', 1200);
+		add_image_size('size_1400', 1400);
+		add_image_size('size_1600', 1600);
+		add_image_size('size_1800', 1800);
 
 		/*
 			* Switch default core markup for search form, comment form, and comments
@@ -136,14 +143,14 @@ if ( ! function_exists( 'foundry_setup' ) ) :
 		add_theme_support('html5', array('search-form', 'comment-form', 'comment-list', 'gallery', 'caption'));
 
 		// Add theme support for selective refresh for widgets.
-		add_theme_support( 'customize-selective-refresh-widgets' );
+		add_theme_support('customize-selective-refresh-widgets');
 
 
 		/**
-		* Add support for core custom logo.
-		*
-		* @link https://codex.wordpress.org/Theme_Logo
-		*/
+		 * Add support for core custom logo.
+		 *
+		 * @link https://codex.wordpress.org/Theme_Logo
+		 */
 		add_theme_support(
 			'custom-logo',
 			array(
@@ -156,10 +163,10 @@ if ( ! function_exists( 'foundry_setup' ) ) :
 
 		/* Gutenberg -> enable wide images
 		/––––––––––––––––––––––––*/
-		add_theme_support( 'align-wide' );
+		add_theme_support('align-wide');
 	}
 endif;
-add_action( 'after_setup_theme', 'foundry_setup' );
+add_action('after_setup_theme', 'foundry_setup');
 
 
 
@@ -171,7 +178,8 @@ add_action( 'after_setup_theme', 'foundry_setup' );
 /––––––––––––––––––––––––*/
 // remove unused stuff from wp_head()
 
-function wpseed_wphead_cleanup () {
+function wpseed_wphead_cleanup()
+{
 	// remove the generator meta tag
 	remove_action('wp_head', 'wp_generator');
 	// remove wlwmanifest link
@@ -193,32 +201,37 @@ function wpseed_wphead_cleanup () {
 	remove_action('wp_head', 'feed_links_extra', 3);
 	remove_action('wp_head', 'feed_links', 2);
 	// remove rest API link
-	remove_action( 'wp_head', 'rest_output_link_wp_head', 10);
+	remove_action('wp_head', 'rest_output_link_wp_head', 10);
 	// remove oEmbed link
-	remove_action( 'wp_head', 'wp_oembed_add_discovery_links', 10);
+	remove_action('wp_head', 'wp_oembed_add_discovery_links', 10);
 	remove_action('wp_head', 'wp_oembed_add_host_js');
-  }
-  add_action('after_setup_theme', 'wpseed_wphead_cleanup');
-
-  /* 2.2 HIDE CORE-UPDATES FOR NON-ADMINS
-/––––––––––––––––––––––––––––––––––––*/
-function onlyadmin_update() {
-	if (!current_user_can('update_core')) { remove_action( 'admin_notices', 'update_nag', 3 ); }
 }
-add_action( 'admin_head', 'onlyadmin_update', 1 );
+add_action('after_setup_theme', 'wpseed_wphead_cleanup');
+
+/* 2.2 HIDE CORE-UPDATES FOR NON-ADMINS
+/––––––––––––––––––––––––––––––––––––*/
+function onlyadmin_update()
+{
+	if (!current_user_can('update_core')) {
+		remove_action('admin_notices', 'update_nag', 3);
+	}
+}
+add_action('admin_head', 'onlyadmin_update', 1);
 
 /* 2.3 RESET INLINE IMAGE DIMENSIONS (FOR CSS-SCALING OF IMAGES)
 /–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
-function remove_thumbnail_dimensions( $html, $post_id, $post_image_id ) {
-	$html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html);
+function remove_thumbnail_dimensions($html, $post_id, $post_image_id)
+{
+	$html = preg_replace('/(width|height)=\"\d*\"\s/', "", $html);
 	return $html;
 }
-add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10, 3);
+add_filter('post_thumbnail_html', 'remove_thumbnail_dimensions', 10, 3);
 
 
 /* 2.4 DISABLE BACKEND-THEME-EDITOR
 /–––––––––––––––––––––––––––––––––*/
-function remove_editor_menu() {
+function remove_editor_menu()
+{
 	remove_action('admin_menu', '_add_themes_utility_last', 101);
 }
 add_action('_admin_menu', 'remove_editor_menu', 1);
@@ -227,97 +240,104 @@ add_action('_admin_menu', 'remove_editor_menu', 1);
 /* 2.5 ADD PAGE SLUG TO BODY CLASS
 /–––––––––––––––––––––––––––––––––*/
 // Add Page Slug to Body Class to make router.js work
-function add_slug_body_class( $classes ) {
+function add_slug_body_class($classes)
+{
 	global $post;
-	if ( isset( $post ) ) {
-	  $classes[] =  $post->post_name;
+	if (isset($post)) {
+		$classes[] =  $post->post_name;
 	}
 	return $classes;
 }
-add_filter( 'body_class', 'add_slug_body_class' ); 
+add_filter('body_class', 'add_slug_body_class');
 
 
 
 /* 2.6 LOGIN PAGE
 /–––––––––––––––––––––––––––––––––*/
 // Customize Logo URL.
-add_filter( 'login_headerurl', 'my_custom_login_url' );
-function my_custom_login_url() {
-    return site_url( '/' );
+add_filter('login_headerurl', 'my_custom_login_url');
+function my_custom_login_url()
+{
+	return site_url('/');
 }
 
 // Style login page
-function we_login_logo() { 
-	GLOBAL $gFontUrl;
-	GLOBAL $fontFamily;
-	GLOBAL $customLogo;
-	GLOBAL $mainColor;
-    ?>
+function we_login_logo()
+{
+	global $gFontUrl;
+	global $fontFamily;
+	global $customLogo;
+	global $mainColor;
+?>
 	<style type="text/css">
-	<?php if($gFontUrl): ?>
-		@import url('<?php echo $gFontUrl ?>');
-	<?php endif; ?>
+		<?php if ($gFontUrl): ?>@import url('<?php echo $gFontUrl ?>');
 
-		body{
-		<?php if($fontFamily): ?>
-			font-family: <?php echo $fontFamily ?>!important;
-		<?php endif; ?>
+		<?php endif; ?>body {
+			<?php if ($fontFamily): ?>font-family: <?php echo $fontFamily ?> !important;
+			<?php endif; ?>
 		}
-	
-        #login h1 a, .login h1 a {
-            background-image: url( <?php echo $customLogo ?>);
+
+		#login h1 a,
+		.login h1 a {
+			background-image: url(<?php echo $customLogo ?>);
 			background-repeat: no-repeat;
 			background-size: 70px;
-			<?php if($fontFamily): ?>
-			font-family: <?php echo $fontFamily ?>!important;
+			<?php if ($fontFamily): ?>font-family: <?php echo $fontFamily ?> !important;
 			<?php endif; ?>
-        }
-        body.login div#login form#loginform p.submit input#wp-submit {
+		}
+
+		body.login div#login form#loginform p.submit input#wp-submit {
 			background-color: transparent;
-			<?php if($fontFamily): ?>
-			font-family: <?php echo $fontFamily ?>!important;
-			<?php endif; ?>
-			color: black;
+			<?php if ($fontFamily): ?>font-family: <?php echo $fontFamily ?> !important;
+			<?php endif; ?>color: black;
 			text-shadow: none;
 			box-shadow: none;
 			border: 1px solid black;
 			border-radius: 1px;
 		}
-		body.login div#login .message{
+
+		body.login div#login .message {
 			border: 2px solid <?php echo $mainColor ?>;
 		}
-		body.login div#login form#loginform p.submit input#wp-submit:hover{
+
+		body.login div#login form#loginform p.submit input#wp-submit:hover {
 			background-color: #f5f5f5;
 		}
-        body.login div#login p#nav a:hover {
-            color: <?php echo $mainColor ?>;
-        }
-        body.login div#login p#backtoblog a:hover {
-            color: <?php echo $mainColor ?>;
-        }
-        body.login div#login form#loginform {
+
+		body.login div#login p#nav a:hover {
+			color: <?php echo $mainColor ?>;
+		}
+
+		body.login div#login p#backtoblog a:hover {
+			color: <?php echo $mainColor ?>;
+		}
+
+		body.login div#login form#loginform {
 			border-radius: 5px;
-			<?php if($fontFamily): ?>
-			font-family: <?php echo $fontFamily ?>!important;
+			<?php if ($fontFamily): ?>font-family: <?php echo $fontFamily ?> !important;
 			<?php endif; ?>
 		}
-		body.login div#login form#loginform input[type="text"]:focus, body.login div#login form#loginform input[type="password"]:focus {
+
+		body.login div#login form#loginform input[type="text"]:focus,
+		body.login div#login form#loginform input[type="password"]:focus {
 			border-color: <?php echo $mainColor ?>;
 			box-shadow: 0 0 0 1px <?php echo $mainColor ?>;
 		}
-		body.login div#login form#loginform div.wp-pwd button.button .dashicons{
+
+		body.login div#login form#loginform div.wp-pwd button.button .dashicons {
 			color: <?php echo $mainColor ?>;
 		}
-    </style>
+	</style>
 <?php }
-add_action( 'login_enqueue_scripts', 'we_login_logo' );
+add_action('login_enqueue_scripts', 'we_login_logo');
 
 
 
 /**
  * Modify Excerpt Length
  */
-function custom_excerpt_length( $length ) {
+function custom_excerpt_length($length)
+{
 	return 23;
 }
-add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+add_filter('excerpt_length', 'custom_excerpt_length', 999);

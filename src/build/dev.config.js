@@ -18,7 +18,7 @@ const configDefault = require(configPath);
 module.exports = merge(commonConfig, {
 	output: {
 		path: path.resolve(__dirname, "../../dist/scripts"),
-		filename: "main.js",
+		filename: "[name].js",
 		clean: true,
 	},
 	devtool: "source-map",
@@ -51,6 +51,31 @@ module.exports = merge(commonConfig, {
 						loader: "sass-loader",
 						options: {
 							sourceMap: true,
+						},
+					},
+				],
+			},
+			{
+				test: /\.css$/,
+				use: [
+					{
+						loader: MiniCssExtractPlugin.loader,
+						options: {},
+					},
+					{
+						loader: "css-loader",
+						options: {
+							sourceMap: true,
+							url: false,
+						},
+					},
+					{
+						loader: "postcss-loader",
+						options: {
+							sourceMap: true,
+							postcssOptions: {
+								config: "src/build/",
+							},
 						},
 					},
 				],
