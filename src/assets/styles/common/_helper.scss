@@ -41,3 +41,24 @@
 .mono {
 	font-family: $monospace__fontname;
 }
+
+[data-text-hover] {
+	position: relative;
+	overflow: hidden;
+	background: linear-gradient(
+		to right,
+		$color__link,
+		$color__link 50%,
+		$color__dark 50%
+	);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-size: 200% 100%;
+	background-position: 100%;
+	transition: background-position 450ms ease-in-out;
+	text-decoration: none; // text decorations are clipped in WebKit browsers
+	&:hover {
+		background-position: 0 100%;
+	}
+}

@@ -50,3 +50,20 @@ function hide_admin_bar_for_non_admins()
   }
 }
 add_action('after_setup_theme', 'hide_admin_bar_for_non_admins');
+
+
+/**
+ * Add custom class and data attribute to a specific menu item link
+ */
+function my_custom_menu_link_attributes($atts, $item, $args)
+{
+  // Replace 'primary' with your menu slug (theme_location)
+  // Replace 123 with the menu item ID you want to target
+  if ($args->theme_location === 'mainmenu') {
+    // Add your custom data attribute
+    $atts['data-text-hover'] = $item->title;
+  }
+
+  return $atts;
+}
+add_filter('nav_menu_link_attributes', 'my_custom_menu_link_attributes', 10, 3);

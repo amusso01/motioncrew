@@ -126,6 +126,9 @@ $header-height-sm: 68px;
 						line-height: 18px;
 						font-weight: 300;
 						text-transform: uppercase;
+						&:hover {
+							text-decoration: underline;
+						}
 					}
 				}
 			}
