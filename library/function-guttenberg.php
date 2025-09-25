@@ -1,27 +1,34 @@
-<?php 
+<?php
 
 /*==================================================================================
 Register color paette for guttenberg
 ==================================================================================*/
-function ea_setup() {
+function ea_setup()
+{
 	// Disable Custom Colors
-	add_theme_support( 'disable-custom-colors' );
-  
+	add_theme_support('disable-custom-colors');
+
 	// Editor Color Palette
-	add_theme_support( 'editor-color-palette', array(
+	add_theme_support('editor-color-palette', array(
 		array(
-			'name'  => __( 'Blue', 'ea-starter' ),
+			'name'  => __('Blue', 'ea-starter'),
 			'slug'  => 'blue',
-			'color'	=> '#165F97',
+			'color'	=> '#1B87E0',
 		),
 		array(
-			'name'  => __( 'Orange', 'ea-starter' ),
-			'slug'  => 'orange',
-			'color' => '#F7931C',
+			'name'  => __('Green', 'ea-starter'),
+			'slug'  => 'green',
+			'color' => '#188C61',
 		),
-	) );
+		array(
+			'name'  => __('red', 'ea-starter'),
+			'slug'  => 'red',
+			'color' => '#C12B3E',
+		),
+
+	));
 }
-add_action( 'after_setup_theme', 'ea_setup' );
+add_action('after_setup_theme', 'ea_setup');
 
 /*==================================================================================
 Allow certain block on Guttenberg

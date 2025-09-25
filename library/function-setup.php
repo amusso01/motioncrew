@@ -31,7 +31,7 @@ setlocale(LC_ALL, 'en_US.UTF-8');
 ==================================================================================*/
 // Gutenberg comes with default styles for all blocks
 // by default these styles are disabled. Change this to `true` to enqueue them
-$load_default_block_styles = false;
+$load_default_block_styles = true;
 
 
 

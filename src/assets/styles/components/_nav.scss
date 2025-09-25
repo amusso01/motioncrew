@@ -25,9 +25,13 @@ $header-height-sm: 68px;
 
 	&__inner-wrapper {
 		left: 50%;
-		transform: translateX(-50%);
+		transform: translate(-50%, 0);
 		min-width: 560px;
 		top: $top-distance;
+		transition: transform 0.3s ease, opacity 0.4s ease, filter 0.2s ease;
+		z-index: 1;
+		filter: blur(0px);
+		opacity: 1;
 
 		@include media("<2xl") {
 			min-width: 432px;
@@ -37,6 +41,31 @@ $header-height-sm: 68px;
 			min-width: 345px;
 			top: $top-distance-sm;
 		}
+
+		// SCROLL ANIMATION
+		&.is-scrolled {
+			transform: translate(-50%, -20px);
+			z-index: -1;
+			opacity: 0.5;
+			filter: blur(2px);
+			.site-header__inner {
+				height: 45px;
+				transition: height 0.3s ease;
+			}
+			.site-header__logo {
+				img {
+					transform: scale(0.8);
+				}
+			}
+		}
+	}
+
+	.site-header__logo {
+		img {
+			transition: transform 0.3s ease;
+			transform: scale(1);
+			transform-origin: left;
+		}
 	}
 
 	&__inner {
@@ -44,6 +73,7 @@ $header-height-sm: 68px;
 		border-radius: 14px;
 		position: relative;
 		height: $header-height;
+		transition: height 0.3s ease;
 
 		@include media("<2xl") {
 			padding: 0px 20px;

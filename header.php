@@ -57,7 +57,7 @@ if ($menu_object) {
 		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'foundry'); ?></a>
 		<header class="site-header content-block" x-data="{ navOpen: false }" @click.outside="navOpen = false">
 			<div class="content-max site-header__container">
-				<div class="site-header__inner-wrapper fixed z-100">
+				<div class="site-header__inner-wrapper fixed z-100" id="navResize">
 					<div class="site-header__inner flex justify-between items-center bg-white">
 						<?php get_template_part('components/header/logo'); ?>
 						<?php get_template_part('components/navigation/primary'); ?>

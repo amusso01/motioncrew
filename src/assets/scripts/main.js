@@ -10,6 +10,9 @@ import common from "./routes/common";
 import Alpine from "alpinejs";
 import focus from "@alpinejs/focus";
 
+// import part
+import navResize from "./part/navResize";
+
 /** Populate Router instance with DOM routes */
 const routes = new Router({
 	// All pages
@@ -27,4 +30,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 	Alpine.start();
 
 	routes.loadEvents();
+
+	navResize();
 });

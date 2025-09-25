@@ -1,0 +1,59 @@
+.page-content {
+	max-width: 700px;
+	margin: 0 auto;
+	margin-bottom: 80px;
+	margin-top: 60px;
+
+	@include media("<xl") {
+		max-width: 650px;
+	}
+	@include media("<lg") {
+		max-width: 500px;
+	}
+	@include media("<md") {
+		max-width: 450px;
+	}
+	@include media("<sm") {
+		max-width: 350px;
+	}
+	p + p {
+		margin-top: 1rem;
+	}
+
+	p {
+		letter-spacing: 0.4px;
+		line-height: 20px;
+	}
+
+	h2 + p,
+	h3 + p,
+	h4 + p,
+	h5 + p,
+	h6 + p {
+		margin-top: 1.3rem;
+	}
+	ul {
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+		padding-left: 1.5rem;
+		list-style-type: disc;
+		li {
+			margin-bottom: 0.3rem;
+		}
+	}
+	ol {
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+		padding-left: 1rem;
+		list-style-type: decimal;
+		li {
+			margin-bottom: 0.3rem;
+		}
+	}
+
+	figure {
+		margin-top: 1.3rem;
+		margin-bottom: 1.3rem;
+		text-align: center;
+	}
+}

@@ -19,7 +19,6 @@
 
 		<div class="site-footer__top">
 			<div class="site-footer__top-inner">
-				<!-- <?php get_template_part('svg-template/svg-camera-plus'); ?> -->
 				<div class="site-footer__top-info">
 					<div class="site-footer__top-info-title">
 						<h6 class="font-monospace"><?= get_field('site_title', 'options') ?></h6>
@@ -30,6 +29,9 @@
 					</div>
 				</div>
 				<div class="site-footer__top-frame">
+					<div class="camera-plus">
+						<?php get_template_part('svg-template/svg-camera-plus'); ?>
+					</div>
 					<div class="cover cover-top-left"></div>
 					<div class="cover cover-bottom-left"></div>
 					<div class="cover cover-top-right"></div>
