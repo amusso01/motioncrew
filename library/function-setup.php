@@ -54,7 +54,8 @@ function wpseed_register_theme_menus()
   register_nav_menus([
     'mainmenu' => __('Main menu'),
     'footermenu' => __('Footer menu'),
-    'legalmenu' => __('Legal menu')
+    'legalmenu' => __('Legal menu'),
+    'socialmenu' => __('Social menu')
   ]);
 }
 add_action('init', 'wpseed_register_theme_menus');

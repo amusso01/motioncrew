@@ -1,3 +1,139 @@
-footer.site-footer {
-	background-color: $color__footerBg;
+.site-footer {
+	&__top {
+		background-color: $color__footerBg;
+		margin-bottom: 6px;
+		padding: 40px 27px;
+		border-radius: 14px;
+	}
+	&__bottom {
+		background-color: $color__footerBg;
+		padding: 15px 20px;
+		border-radius: 14px;
+		.legal-menu {
+			.menu-item {
+				a {
+					font-family: $monospace__fontname;
+					font-size: 10px;
+					line-height: 13px;
+					font-weight: 300;
+					text-transform: uppercase;
+					color: $color__dark;
+					letter-spacing: 0.25px;
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+	}
+
+	.site-footer__top-info {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		width: 100%;
+		margin-bottom: 25px;
+		h6 {
+			font-weight: 300;
+			font-size: 12px;
+			line-height: 16px;
+			text-transform: uppercase;
+			letter-spacing: 0.3px;
+			margin-bottom: 10px;
+		}
+		.site-footer__top-info-text {
+			a {
+				display: block;
+				text-align: right;
+				margin-bottom: 10px;
+				font-size: 12px;
+				line-height: 16px;
+				font-weight: 300;
+				text-transform: uppercase;
+				letter-spacing: 0.3px;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+
+	.site-footer__top-frame {
+		position: relative;
+		padding: 18px;
+		min-height: 290px;
+		display: flex;
+		.cover {
+			position: absolute;
+			background-color: transparent;
+			width: 95px;
+			height: 95px;
+			pointer-events: none;
+		}
+		.cover-top-left,
+		.cover-top-right {
+			border-top: 1px solid $color__dark;
+			top: 0;
+		}
+
+		.cover-bottom-left,
+		.cover-bottom-right {
+			border-bottom: 1px solid $color__dark;
+			bottom: 0;
+		}
+
+		.cover-top-left,
+		.cover-bottom-left {
+			left: 0;
+			border-left: 1px solid $color__dark;
+		}
+		.cover-top-right,
+		.cover-bottom-right {
+			right: 0;
+			border-right: 1px solid $color__dark;
+		}
+
+		.footer-grid {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-end;
+		}
+	}
+
+	.footer-menu {
+		.menu-item {
+			a {
+				font-size: 12px;
+				line-height: 18px;
+				display: block;
+				font-weight: 300;
+				text-transform: uppercase;
+				letter-spacing: 0.3px;
+				color: $color__dark;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+
+	// Social menu SVG icons styling
+	.social-menu {
+		.menu {
+			display: flex;
+			gap: 13px;
+		}
+		.social-icon-menu-item {
+			cursor: pointer;
+			a {
+				svg {
+					width: 16px;
+					height: 16px;
+					vertical-align: middle;
+					transition: opacity 0.3s ease;
+				}
+			}
+		}
+	}
 }

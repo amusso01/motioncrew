@@ -55,7 +55,7 @@ if ($menu_object) {
 
 	<div id="page" class="site">
 		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'foundry'); ?></a>
-		<header class="site-header" x-data="{ navOpen: false }" @click.outside="navOpen = false">
+		<header class="site-header content-block" x-data="{ navOpen: false }" @click.outside="navOpen = false">
 			<div class="content-max site-header__container">
 				<div class="site-header__inner-wrapper fixed z-100">
 					<div class="site-header__inner flex justify-between items-center bg-white">

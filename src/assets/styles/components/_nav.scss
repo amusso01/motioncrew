@@ -5,8 +5,6 @@ $header-height: 92px;
 $header-height-sm: 68px;
 
 .site-header {
-	@extend .content-block;
-
 	&__container {
 		min-height: calc($header-height + ($top-distance * 2));
 		display: flex;

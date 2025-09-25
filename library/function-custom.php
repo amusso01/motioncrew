@@ -67,3 +67,68 @@ function my_custom_menu_link_attributes($atts, $item, $args)
   return $atts;
 }
 add_filter('nav_menu_link_attributes', 'my_custom_menu_link_attributes', 10, 3);
+
+
+/*==================================================================================
+  SOCIAL MENU SVG ICONS
+==================================================================================*/
+
+/**
+ * SETUP INSTRUCTIONS:
+ * 
+ * 1. In ACF, create a new Field Group
+ * 2. Add a File field with:
+ *    - Field Label: "Icon"
+ *    - Field Name: "icon"
+ *    - Return Format: "File URL" or "File Array"
+ *    - Mime Types: "svg"
+ * 3. Set Location Rules to:
+ *    - Menu Item equals All (or specific menu)
+ * 4. Upload SVG files to menu items via Appearance > Menus
+ */
+
+/**
+ * Replace social menu item titles with SVG icons from ACF field
+ * 
+ * This filter replaces menu item titles with SVG content from ACF file field
+ * for the social menu only, keeping other menus unchanged.
+ *
+ * @param array $items The menu items
+ * @param object $args The wp_nav_menu() arguments
+ * @return array Modified menu items
+ */
+function social_menu_svg_icons($items, $args)
+{
+  // Only apply to social menu
+  if ($args->theme_location !== 'socialmenu') {
+    return $items;
+  }
+
+  foreach ($items as &$item) {
+    // Get the SVG file from ACF field
+    $svg_file = get_field('icon', $item);
+
+    if ($svg_file) {
+      // Handle both URL string and ACF file array
+      $file_url = is_array($svg_file) ? $svg_file['url'] : $svg_file;
+
+      // Use existing helper function to get SVG content
+      $svg_content = acfFile_toSvg($file_url);
+
+      if ($svg_content) {
+        // Store original title for screen readers
+        $original_title = $item->title;
+
+        // Replace title with SVG content
+        $item->title = $svg_content;
+
+        // Add screen reader friendly attributes to the item
+        $item->attr_title = $original_title;
+        $item->classes[] = 'social-icon-menu-item';
+      }
+    }
+  }
+
+  return $items;
+}
+add_filter('wp_nav_menu_objects', 'social_menu_svg_icons', 10, 2);
