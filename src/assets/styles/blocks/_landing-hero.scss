@@ -1,0 +1,43 @@
+.block-landing-hero {
+	width: 100vw;
+	height: 100vh;
+
+	.block-landing-hero__wrapper {
+		position: relative;
+		z-index: 1;
+		min-height: 78vh;
+		padding: 20px;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.block-landing-hero__tagline {
+		font-family: $monospace__fontname;
+		font-size: 12px;
+		line-height: 18px;
+		font-weight: 400;
+		text-transform: uppercase;
+		letter-spacing: 0.3px;
+	}
+
+	.block-landing-hero__text {
+		font-size: 67px;
+		line-height: 81px;
+		font-weight: 700;
+		text-transform: uppercase;
+		margin-bottom: 25px;
+	}
+
+	.block-landing-hero__subtitle {
+		font-family: $monospace__fontname;
+		font-size: 14px;
+		line-height: 19px;
+		font-weight: 500;
+		text-transform: uppercase;
+		letter-spacing: 0.35px;
+		margin-bottom: 28px;
+	}
+}

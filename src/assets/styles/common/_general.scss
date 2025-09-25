@@ -123,3 +123,10 @@ h6,
 .h6 {
 	font-size: $text__h6;
 }
+
+.main {
+	margin-top: 25px;
+	@include media("<sm") {
+		margin-top: 20px;
+	}
+}

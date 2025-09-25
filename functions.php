@@ -71,3 +71,10 @@ require get_template_directory() . '/library/function-guttenberg.php';
 ==================================================================================*/
 // custom functions like shortcodes should be added here
 require get_template_directory() . '/library/function-custom.php';
+
+
+/*==================================================================================
+  TEMPLATE FUNCTIONS
+==================================================================================*/
+// template functions like render_theme_block
+require get_template_directory() . '/template/tmpl-function.php';

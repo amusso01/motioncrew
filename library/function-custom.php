@@ -132,3 +132,28 @@ function social_menu_svg_icons($items, $args)
   return $items;
 }
 add_filter('wp_nav_menu_objects', 'social_menu_svg_icons', 10, 2);
+
+
+
+/**
+ * Disable Gutenberg for specific page templates.
+ */
+add_filter('use_block_editor_for_post_type', 'my_disable_gutenberg_for_template', 10, 2);
+function my_disable_gutenberg_for_template($can_edit, $post_type)
+{
+  // Get the currently assigned template for the post.
+  $current_template = get_page_template_slug();
+
+  // Define the template(s) you want to exclude.
+  $excluded_templates = array(
+    'page-template-block.php', // Replace with your actual template file name(s)
+    // Add more template file names here if needed
+  );
+
+  // Check if it's a page post type and the template is in the excluded list.
+  if ($post_type === 'page' && in_array($current_template, $excluded_templates)) {
+    return false; // Disable Gutenberg for this template.
+  }
+
+  return $can_edit; // Otherwise, use the default setting.
+}

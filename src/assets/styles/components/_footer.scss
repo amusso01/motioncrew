@@ -84,36 +84,6 @@
 			transform: translate(-50%, -50%);
 			pointer-events: none;
 		}
-		.cover {
-			position: absolute;
-			background-color: transparent;
-			width: 95px;
-			height: 95px;
-			pointer-events: none;
-		}
-		.cover-top-left,
-		.cover-top-right {
-			border-top: 1px solid $color__dark;
-			top: 0;
-		}
-
-		.cover-bottom-left,
-		.cover-bottom-right {
-			border-bottom: 1px solid $color__dark;
-			bottom: 0;
-		}
-
-		.cover-top-left,
-		.cover-bottom-left {
-			left: 0;
-			border-left: 1px solid $color__dark;
-		}
-		.cover-top-right,
-		.cover-bottom-right {
-			right: 0;
-			border-right: 1px solid $color__dark;
-		}
-
 		.footer-grid {
 			width: 100%;
 			display: flex;
