@@ -1,0 +1,138 @@
+.block-cards {
+	&__tagline {
+		font-family: $monospace__fontname;
+		font-size: 12px;
+		line-height: 18px;
+		font-weight: 400;
+		text-transform: uppercase;
+		letter-spacing: 0.3px;
+		margin-bottom: 5px;
+		text-align: center;
+	}
+
+	&__title {
+		@extend .h2;
+		line-height: 1;
+		text-align: center;
+	}
+
+	&__grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 54px;
+		margin-top: 33px;
+
+		@include media("<2xl") {
+			gap: 30px;
+		}
+
+		@include media("<xl") {
+			gap: 20px;
+		}
+
+		@include media("<lg") {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+
+	&:hover {
+		.block-cards__item:nth-child(1) {
+			transform: translateX(0px);
+		}
+		.block-cards__item:nth-child(3) {
+			transform: translateX(0px);
+		}
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		background-color: $color__bright;
+		padding: 50px 40px;
+		border-radius: 14px;
+		transition: all 0.3s ease;
+
+		&:nth-child(1) {
+			transform: translateX(200px);
+			z-index: 1;
+		}
+		&:nth-child(2) {
+			z-index: 2;
+		}
+		&:nth-child(3) {
+			transform: translateX(-200px);
+			z-index: 3;
+		}
+
+		@include media("<xl") {
+			padding: 30px 20px;
+
+			&:nth-child(1) {
+				transform: translateX(0px);
+			}
+			&:nth-child(3) {
+				transform: translateX(0px);
+			}
+		}
+
+		.icon {
+			margin-bottom: 26px;
+
+			@include media("<xl") {
+				svg {
+					width: 45px;
+					height: auto;
+				}
+			}
+		}
+		.title {
+			font-size: 30px;
+			line-height: 34px;
+			font-weight: 400;
+			margin-bottom: 26px;
+			@include media("<xl") {
+				font-size: 27px;
+				line-height: 30px;
+			}
+		}
+		.description {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-end;
+			column-gap: 35px;
+			margin-top: auto;
+			.content {
+				font-size: 15px;
+				line-height: 18px;
+				font-weight: 400;
+				letter-spacing: 0.4px;
+				font-family: $monospace__fontname;
+				@include media("<xl") {
+					font-size: 13px;
+					line-height: 16px;
+				}
+			}
+			.link {
+				a {
+					width: 30px;
+					height: 30px;
+					background-color: $color__link;
+					border-radius: 6px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+
+					svg {
+						transition: all 0.3s ease;
+						color: $color__bright;
+					}
+					&:hover {
+						svg {
+							transform: rotate(45deg);
+						}
+					}
+				}
+			}
+		}
+	}
+}
