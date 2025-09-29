@@ -6,7 +6,7 @@ $button = $fields['button'];
 ?>
 
 
-<section class="block-landing-hero content-block">
+<section class="block-padding block-landing-hero content-block">
 
   <div class="content-max">
     <div class="block-landing-hero__wrapper">

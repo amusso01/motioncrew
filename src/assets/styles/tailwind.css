@@ -71,6 +71,7 @@
 	--color-footer-bg: var(--footer-color);
 	--color-bright: #ffffff;
 	--color-dark: #000000;
+	--color-gray: #f0f0f0;
 
 	--text-h1: var(--text-h1);
 	--text-h2: var(--text-h2);

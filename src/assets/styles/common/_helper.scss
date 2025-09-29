@@ -105,3 +105,21 @@
 .blue {
 	background-color: $color__link;
 }
+
+.blue-text {
+	color: $color__link;
+}
+
+.green-text {
+	color: $color__link-hover;
+}
+
+.block-padding {
+	padding-top: 38px;
+	padding-bottom: 38px;
+
+	@include media("<lg") {
+		padding-top: 25px;
+		padding-bottom: 25px;
+	}
+}

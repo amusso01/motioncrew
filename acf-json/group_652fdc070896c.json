@@ -17,6 +17,38 @@
                 "id": ""
             },
             "layouts": {
+                "layout_68d56a9888d12": {
+                    "key": "layout_68d56a9888d12",
+                    "name": "block-cards",
+                    "label": "Cards",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_68d56aad88d15",
+                            "label": "Cards",
+                            "name": "block-cards",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_68d568ffc35af"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_68d5493037d9d": {
                     "key": "layout_68d5493037d9d",
                     "name": "block-landing-hero",
@@ -39,6 +71,70 @@
                             },
                             "clone": [
                                 "group_68d548e63cbea"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_68d55ed876791": {
+                    "key": "layout_68d55ed876791",
+                    "name": "block-logo-marquee",
+                    "label": "Logo Marquee",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_68d55eea76794",
+                            "label": "Logo Marquee",
+                            "name": "block-logo-marquee",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_68d55d0410265"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_68d56c98459d2": {
+                    "key": "layout_68d56c98459d2",
+                    "name": "block-two-list",
+                    "label": "Two Lists",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_68d56ca5459d5",
+                            "label": "Two Lists",
+                            "name": "block-two-list",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_68d56b8652c0f"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -75,5 +171,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1758811162
+    "modified": 1758817464
 }

@@ -1,0 +1,15 @@
+.block-logo-marquee {
+	.block-logo-marquee__wrapper {
+		text-align: center;
+	}
+
+	.block-logo-marquee__tagline {
+		font-family: $monospace__fontname;
+		font-size: 12px;
+		line-height: 18px;
+		font-weight: 400;
+		text-transform: uppercase;
+		letter-spacing: 0.3px;
+		margin-bottom: 15px;
+	}
+}

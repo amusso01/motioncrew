@@ -65,7 +65,7 @@ add_action('init', 'wpseed_register_theme_menus');
   5.0 SETUP LOGIN PAGE 
 ==================================================================================*/
 
-$gFontUrl = "https://fonts.googleapis.com/css?family=Girassol&display=swap";
-$fontFamily = "'Girassol', cursive";
-$customLogo = get_stylesheet_directory_uri() . "/dist/images/foundry-logo.svg";
+$gFontUrl = "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap";
+$fontFamily = "'IBM Plex Mono', monospace";
+$customLogo = get_stylesheet_directory_uri() . "/dist/images/logo.png";
 $mainColor = "#1B87E0";
