@@ -1,18 +1,18 @@
 # MotionCrew WordPress Theme
 
-A custom WordPress theme built with modern tooling including Webpack, Tailwind CSS, Alpine.js, and SASS.
+A custom WordPress theme built with modern tooling Webpack, Tailwind CSS, Alpine.js, and SASS.
 
 ## Prerequisites
 
 Before you begin, ensure you have the following installed:
 
 - **Node.js**: v22.x ([download here](https://nodejs.org/))
-- **Yarn**: Package manager ([installation guide](https://yarnpkg.com/getting-started/install))
+- **Yarn**: v 1.22.21 Package manager ([installation guide](https://yarnpkg.com/getting-started/install))
 - **WordPress**: Local WordPress installation
 - **PHP**: Version compatible with WordPress (7.4+)
 - **MySQL/MariaDB**: Database server
-- **Local Development Server**:
-  - Laravel Valet (for macOS) - currently configured
+- **Local Development Server**: Any pick what's best for you.
+  - Laravel Valet (for macOS)
   - MAMP, XAMPP, Local by Flywheel, or Docker alternatives
 
 ## Project Setup
@@ -50,7 +50,7 @@ Edit `src/build/config-default.json`:
 
 ```json
 {
-	"devUrl": "http://motioncrew.test", // ← Change this to your WordPress URL
+	"devUrl": "http://motioncrew.test", // ← Change this to your local WordPress URL
 	"revisioning": true
 }
 ```
