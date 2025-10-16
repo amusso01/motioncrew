@@ -1,0 +1,156 @@
+/* Trig-Animations.css v4.0 by iDev Games */
+
+/* ************************ */
+
+/* Trig.js */
+
+/* Trig */
+
+.trig {
+	--trig-delay: 0s;
+	--trig-duration: 1s;
+	--trig-blend: ease-out;
+	--trig-direction: normal backwards;
+
+	position: relative;
+}
+
+.trig {
+	.trig-target {
+		opacity: 1;
+	}
+}
+.trig-target {
+	opacity: 0;
+}
+
+/* END */
+
+/* ************************ */
+
+/* Fade Up */
+
+.trig-fade-up.trig.trig-target,
+.trig-fade-up.trig .trig-target {
+	animation: trig-fade-up var(--trig-direction) var(--trig-blend)
+		var(--trig-duration);
+	animation-delay: var(--trig-delay);
+}
+
+@keyframes trig-fade-up {
+	0% {
+		opacity: 0;
+		transform: translateY(100%);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0%);
+	}
+}
+
+/* END */
+
+/* Reveal */
+
+.trig-reveal.trig-target,
+.trig-reveal .trig-target {
+	display: inline-block;
+}
+
+.trig-reveal.trig.trig-target,
+.trig-reveal.trig .trig-target {
+	animation: trig-reveal var(--trig-direction) var(--trig-blend)
+		var(--trig-duration);
+	animation-delay: var(--trig-delay);
+}
+
+@keyframes trig-reveal {
+	0% {
+		clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+	}
+
+	100% {
+		clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+	}
+}
+
+/* END */
+
+/* Reveal Up */
+
+.trig-reveal-up.trig-target,
+.trig-reveal-up .trig-target {
+	display: inline-block;
+}
+
+.trig-reveal-up.trig.trig-target,
+.trig-reveal-up.trig .trig-target {
+	animation: trig-reveal-up var(--trig-direction) var(--trig-blend)
+		var(--trig-duration);
+	animation-delay: var(--trig-delay);
+}
+
+@keyframes trig-reveal-up {
+	0% {
+		clip-path: polygon(100% 100%, 0 100%, 0 100%, 100% 100%);
+	}
+
+	100% {
+		clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+	}
+}
+
+/* END */
+
+/* Reveal Down */
+
+.trig-reveal-down.trig-target,
+.trig-reveal-down .trig-target {
+	display: inline-block;
+}
+
+.trig-reveal-down.trig.trig-target,
+.trig-reveal-down.trig .trig-target {
+	animation: trig-reveal-down var(--trig-direction) var(--trig-blend)
+		var(--trig-duration);
+	animation-delay: var(--trig-delay);
+}
+
+@keyframes trig-reveal-down {
+	0% {
+		clip-path: polygon(100% 0, 0 0, 0 0, 100% 0);
+	}
+
+	100% {
+		clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+	}
+}
+
+/* END */
+
+/* Reveal Left */
+
+.trig-reveal-left.trig-target,
+.trig-reveal-left .trig-target {
+	display: inline-block;
+}
+
+.trig-reveal-left.trig.trig-target,
+.trig-reveal-left.trig .trig-target {
+	animation: trig-reveal-left var(--trig-direction) var(--trig-blend)
+		var(--trig-duration);
+	animation-delay: var(--trig-delay);
+}
+
+@keyframes trig-reveal-left {
+	0% {
+		clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+	}
+
+	100% {
+		clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+	}
+}
+
+/* END */

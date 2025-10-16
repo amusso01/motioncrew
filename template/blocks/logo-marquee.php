@@ -17,12 +17,14 @@ $logos = $fields['logos'];
 
       // Initialization
       init() {
-      // Clone the Marquee list and append it to the marquee track (we need 2 full width tracks for the Marquee animation to work correctly)
+      // Clone the Marquee list multiple times to ensure infinite scroll on all screen sizes
       this.$nextTick(() => {
-        const clonedList = this.$refs.marqueeList.cloneNode(true);
-        // Add margin-left to create gap between original and cloned list
-        clonedList.classList.add('ml-10'); 
-        this.$refs.marqueeTrack.appendChild(clonedList);
+        // Create enough clones to cover even the largest screens
+        const numberOfClones = 4; // Extra clone for ultra-wide screens
+        for (let i = 0; i < numberOfClones; i++) {
+          const clonedList = this.$refs.marqueeList.cloneNode(true);
+          this.$refs.marqueeTrack.appendChild(clonedList);
+        }
       });
     }
   }"
@@ -39,21 +41,21 @@ $logos = $fields['logos'];
       <!-- Marquee Track -->
       <div
         x-ref="marqueeTrack"
-        class="animate-full-tl rtl:animate-full-tr relative flex w-full"
+        class="animate-full-tl rtl:animate-full-tr relative flex w-full marquee-track"
         x-bind:class="{ 'hover:[animation-play-state:paused]': pauseOnHover }">
         <!-- Marquee list -->
         <div
           x-ref="marqueeList"
-          class="flex w-full shrink-0 flex-nowrap items-center justify-around gap-10 px-5">
+          class="flex shrink-0 flex-nowrap items-center lg:gap-20 gap-10 px-5 marquee-list">
           <!-- Marquee Items -->
           <?php if ($logos) : ?>
             <?php foreach ($logos as $logo) : ?>
               <?php $svg_file = $logo['svg']; ?>
               <?php $file_url = is_array($svg_file) ? $svg_file['url'] : $svg_file; ?>
               <?php $svg_content = acfFile_toSvg($file_url); ?>
-              <?php echo $svg_content; ?>
-
-
+              <div class="logo-item">
+                <?php echo $svg_content; ?>
+              </div>
             <?php endforeach; ?>
           <?php endif; ?>
 

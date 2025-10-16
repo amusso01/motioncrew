@@ -21,6 +21,7 @@
 		font-weight: 400;
 		text-transform: uppercase;
 		letter-spacing: 0.3px;
+		margin-bottom: 10px;
 	}
 
 	.block-landing-hero__text {
@@ -29,13 +30,30 @@
 		font-weight: 700;
 		text-transform: uppercase;
 		margin-bottom: 25px;
+
+		@include media("<2xl") {
+			font-size: 60px;
+			line-height: 72px;
+		}
+		@include media("<xl") {
+			font-size: 50px;
+			line-height: 60px;
+		}
+		@include media("<lg") {
+			font-size: 40px;
+			line-height: 48px;
+		}
+		@include media("<md") {
+			font-size: 30px;
+			line-height: 36px;
+		}
 	}
 
 	.block-landing-hero__subtitle {
 		font-family: $monospace__fontname;
 		font-size: 14px;
 		line-height: 19px;
-		font-weight: 500;
+		font-weight: 400;
 		text-transform: uppercase;
 		letter-spacing: 0.35px;
 		margin-bottom: 28px;

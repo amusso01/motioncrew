@@ -1,0 +1,22 @@
+.block-text-banner {
+	.block-text-banner__wrapper {
+		padding: 64px;
+		border-radius: 14px;
+		max-width: 1230px;
+		margin: 0 auto;
+		font-size: 34px;
+		line-height: 41px;
+		font-weight: 700;
+
+		@include media("<lg") {
+			padding: 40px;
+			font-size: 30px;
+			line-height: 36px;
+		}
+		@include media("<md") {
+			padding: 20px;
+			font-size: 25px;
+			line-height: 30px;
+		}
+	}
+}

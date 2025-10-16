@@ -12,4 +12,153 @@
 		letter-spacing: 0.3px;
 		margin-bottom: 15px;
 	}
+
+	// Custom marquee animation - override Tailwind
+	@keyframes marquee-scroll {
+		0% {
+			transform: translateX(0);
+		}
+		100% {
+			transform: translateX(-50%);
+		}
+	}
+
+	@keyframes marquee-scroll-rtl {
+		0% {
+			transform: translateX(0);
+		}
+		100% {
+			transform: translateX(50%);
+		}
+	}
+
+	// Marquee container styles
+	.relative {
+		// Ensure the marquee track maintains proper width
+		.marquee-track {
+			width: auto !important;
+			will-change: transform;
+
+			// Prevent shrinking of logos
+			.marquee-list {
+				width: auto;
+				min-width: fit-content;
+
+				// Add spacing between cloned lists
+				& + .marquee-list {
+					margin-left: 5rem; // gap-10 equivalent
+
+					@include media("<md") {
+						margin-left: 2.5rem;
+					}
+				}
+
+				.logo-item {
+					flex-shrink: 0 !important;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+
+					svg {
+						width: auto !important;
+						height: 40px !important;
+						max-width: 120px !important;
+						flex-shrink: 0 !important;
+						object-fit: contain;
+
+						@include media("<md") {
+							height: 35px !important;
+							max-width: 100px !important;
+						}
+
+						@include media("<sm") {
+							height: 30px !important;
+							max-width: 80px !important;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// Override Tailwind classes for better control
+	.animate-full-tl {
+		animation: marquee-scroll 18s linear infinite !important;
+
+		@include media("<md") {
+			animation: marquee-scroll 8s linear infinite !important;
+		}
+
+		// Ensure logos don't shrink in the flex container
+		.marquee-list {
+			align-items: center;
+			width: auto;
+			min-width: fit-content;
+
+			.logo-item {
+				flex-shrink: 0 !important;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				svg {
+					width: auto !important;
+					height: 40px !important;
+					max-width: 120px !important;
+					flex-shrink: 0 !important;
+					object-fit: contain;
+
+					@include media("<md") {
+						height: 35px !important;
+						max-width: 100px !important;
+					}
+
+					@include media("<sm") {
+						height: 30px !important;
+						max-width: 80px !important;
+					}
+				}
+			}
+		}
+	}
+
+	.animate-full-tr {
+		animation: marquee-scroll-rtl 18s linear infinite !important;
+
+		@include media("<md") {
+			animation: marquee-scroll-rtl 8s linear infinite !important;
+		}
+
+		// Ensure logos don't shrink in the flex container
+		.marquee-list {
+			align-items: center;
+			width: auto;
+			min-width: fit-content;
+
+			.logo-item {
+				flex-shrink: 0 !important;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				svg {
+					width: auto !important;
+					height: 40px !important;
+					max-width: 120px !important;
+					flex-shrink: 0 !important;
+					object-fit: contain;
+
+					@include media("<md") {
+						height: 35px !important;
+						max-width: 100px !important;
+					}
+
+					@include media("<sm") {
+						height: 30px !important;
+						max-width: 80px !important;
+					}
+				}
+			}
+		}
+	}
 }

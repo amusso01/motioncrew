@@ -69,3 +69,46 @@ $gFontUrl = "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,
 $fontFamily = "'IBM Plex Mono', monospace";
 $customLogo = get_stylesheet_directory_uri() . "/dist/images/logo.png";
 $mainColor = "#1B87E0";
+
+
+
+// DISABLE COMMENT
+// Disable comments site-wide
+add_action('admin_init', function () {
+  // Redirect any user trying to access comment-related pages
+  global $pagenow;
+  if ($pagenow === 'edit-comments.php') {
+    wp_redirect(admin_url());
+    exit;
+  }
+
+  // Remove comments metabox from dashboard
+  remove_meta_box('dashboard_recent_comments', 'dashboard', 'normal');
+
+  // Disable comments and trackbacks support for all post types
+  foreach (get_post_types() as $post_type) {
+    if (post_type_supports($post_type, 'comments')) {
+      remove_post_type_support($post_type, 'comments');
+      remove_post_type_support($post_type, 'trackbacks');
+    }
+  }
+});
+
+// Close comments on the front-end
+add_filter('comments_open', '__return_false', 20, 2);
+add_filter('pings_open', '__return_false', 20, 2);
+
+// Hide existing comments
+add_filter('comments_array', '__return_empty_array', 10, 2);
+
+// Remove comments menu from admin
+add_action('admin_menu', function () {
+  remove_menu_page('edit-comments.php');
+});
+
+// Remove comments icon from admin bar
+add_action('init', function () {
+  if (is_admin_bar_showing()) {
+    remove_action('admin_bar_menu', 'wp_admin_bar_comments_menu', 60);
+  }
+});

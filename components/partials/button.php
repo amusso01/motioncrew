@@ -15,7 +15,7 @@ $link = $args['link'];
 $color = $args['color'] ?? 'blue';
 ?>
 
-<div class="btn <?= $color  ?>" x-data="{ hover: false }">
+<div class="btn <?= $color  ?>">
   <a class="btn_wrapper" href="<?php echo $link; ?>">
     <div class="text"><?php echo $text; ?> <span class="circle"></span></div>
     <div class="text-hover"><?php echo $text; ?> <span class="circle"></span></div>

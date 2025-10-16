@@ -157,3 +157,101 @@ function my_disable_gutenberg_for_template($can_edit, $post_type)
 
   return $can_edit; // Otherwise, use the default setting.
 }
+
+
+// REDIRECT TO SPECIFIC PAGE IF RESTRICTED BY MEMBERS PLUGIN
+/**
+ * Redirect users away from Members-restricted content.
+ * Change $redirect_to to your target URL (absolute URL recommended).
+ */
+add_action('template_redirect', function () {
+  if (!is_singular()) {
+    return;
+  }
+
+  $post = get_queried_object();
+  if (empty($post) || empty($post->ID)) {
+    return;
+  }
+
+  // Allowed roles set by Members "Content Permissions" meta box.
+  // Meta key used by Members for allowed roles:
+  $allowed_roles = get_post_meta($post->ID, '_members_access_role', true);
+
+  // If nothing is set, this post isn't restricted.
+  if (empty($allowed_roles)) {
+    return;
+  }
+
+  $redirect_to = home_url('/login'); // ← change to your target page
+
+  // Authors/editors and roles with 'restrict_content' can always view.
+  if (is_user_logged_in()) {
+    $user = wp_get_current_user();
+    if (
+      user_can($user, 'restrict_content') ||
+      current_user_can('edit_post', $post->ID)
+    ) {
+      return;
+    }
+
+    // If user has any allowed role, let them in.
+    $user_roles = (array) $user->roles;
+    if (!empty(array_intersect((array) $allowed_roles, $user_roles))) {
+      return;
+    }
+  }
+
+  // Not logged in or doesn't have one of the allowed roles — redirect.
+  wp_safe_redirect($redirect_to, 302);
+  exit;
+});
+
+
+/**
+ * Hide the 'news' CPT UI.
+ * Keeps posts and REST/API intact; just removes admin screens/menus/toolbars.
+ */
+add_action('admin_menu', 'remove_default_post_type');
+
+function remove_default_post_type()
+{
+  remove_menu_page('edit.php');
+}
+add_action('admin_bar_menu', 'remove_default_post_type_menu_bar', 999);
+
+function remove_default_post_type_menu_bar($wp_admin_bar)
+{
+  $wp_admin_bar->remove_node('new-post');
+}
+function remove_add_new_post_href_in_admin_bar()
+{
+?>
+  <script type="text/javascript">
+    function remove_add_new_post_href_in_admin_bar() {
+      var add_new = document.getElementById('wp-admin-bar-new-content');
+      if (!add_new) return;
+      var add_new_a = add_new.getElementsByTagName('a')[0];
+      if (add_new_a) add_new_a.setAttribute('href', '#!');
+    }
+    remove_add_new_post_href_in_admin_bar();
+  </script>
+<?php
+}
+add_action('admin_footer', 'remove_add_new_post_href_in_admin_bar');
+
+
+function remove_frontend_post_href()
+{
+  if (is_user_logged_in()) {
+    add_action('wp_footer', 'remove_add_new_post_href_in_admin_bar');
+  }
+}
+add_action('init', 'remove_frontend_post_href');
+
+add_action('wp_dashboard_setup', 'remove_draft_widget', 999);
+
+function remove_draft_widget()
+{
+  remove_meta_box('dashboard_quick_press', 'dashboard', 'side');
+}

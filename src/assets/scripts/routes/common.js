@@ -1,4 +1,6 @@
 import smoothscroll from "smoothscroll-polyfill";
+// import part
+import navResize from "./../part/navResize";
 
 export default {
 	init() {
@@ -6,6 +8,7 @@ export default {
 
 		// kick off the polyfill!
 		smoothscroll.polyfill();
+		navResize();
 	},
 
 	finalize() {

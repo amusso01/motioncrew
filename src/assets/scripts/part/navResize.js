@@ -4,7 +4,7 @@ export default function navResize() {
 
 	const cls = "is-scrolled";
 	const addAt = 145; // initial add threshold
-	const upDelta = 60; // remove after scrolling up this much from the peak
+	const upDelta = 90; // remove after scrolling up this much from the peak
 	const downDelta = 20; // re-add after moving down this much (if you haven't gone back ≤ addAt)
 
 	let state = "hidden"; // 'shown' | 'hidden'

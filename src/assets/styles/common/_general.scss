@@ -96,6 +96,12 @@ h2,
 	@include media("<2xl") {
 		font-size: 45px;
 	}
+	@include media("<lg") {
+		font-size: 35px;
+	}
+	@include media("<md") {
+		font-size: 30px;
+	}
 }
 
 h3,

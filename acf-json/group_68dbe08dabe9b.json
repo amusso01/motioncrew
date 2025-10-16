@@ -1,11 +1,11 @@
 {
-    "key": "group_68d548e63cbea",
-    "title": "Block Landing Hero",
+    "key": "group_68dbe08dabe9b",
+    "title": "Block Text Banner",
     "fields": [
         {
-            "key": "field_68d548e6ca6a4",
+            "key": "field_68dbe08dad7f0",
             "label": "",
-            "name": "block-landing-hero",
+            "name": "block-text-banner",
             "aria-label": "",
             "type": "group",
             "instructions": "",
@@ -19,7 +19,7 @@
             "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_68dbdf537e46e",
+                    "key": "field_68dbe413cb758",
                     "label": "Content",
                     "name": "",
                     "aria-label": "",
@@ -37,30 +37,9 @@
                     "selected": 0
                 },
                 {
-                    "key": "field_68d5490dca6a5",
-                    "label": "Tagline",
-                    "name": "tagline",
-                    "aria-label": "",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "\/\/COMING SOON",
-                    "maxlength": "",
-                    "allow_in_bindings": 0,
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": ""
-                },
-                {
-                    "key": "field_68d5547a19923",
-                    "label": "Hero Text",
-                    "name": "hero_text",
+                    "key": "field_68dbe08daeaa0",
+                    "label": "Content",
+                    "name": "content",
                     "aria-label": "",
                     "type": "wysiwyg",
                     "instructions": "",
@@ -79,45 +58,7 @@
                     "delay": 0
                 },
                 {
-                    "key": "field_68d554ab19924",
-                    "label": "Subtitle",
-                    "name": "subtitle",
-                    "aria-label": "",
-                    "type": "textarea",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "maxlength": "",
-                    "allow_in_bindings": 0,
-                    "rows": 3,
-                    "placeholder": "",
-                    "new_lines": "wpautop"
-                },
-                {
-                    "key": "field_68d554cc19925",
-                    "label": "Button",
-                    "name": "button",
-                    "aria-label": "",
-                    "type": "link",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array",
-                    "allow_in_bindings": 0
-                },
-                {
-                    "key": "field_68dbdf6b7e46f",
+                    "key": "field_68dbe404cb757",
                     "label": "Option",
                     "name": "",
                     "aria-label": "",
@@ -135,11 +76,11 @@
                     "selected": 0
                 },
                 {
-                    "key": "field_68dbdf7e7e470",
-                    "label": "Show Frame",
-                    "name": "show_frame",
+                    "key": "field_68dbe420cb759",
+                    "label": "Bg color",
+                    "name": "bg_color",
                     "aria-label": "",
-                    "type": "true_false",
+                    "type": "color_picker",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -148,12 +89,29 @@
                         "class": "",
                         "id": ""
                     },
-                    "message": "",
-                    "default_value": 1,
-                    "allow_in_bindings": 0,
-                    "ui_on_text": "",
-                    "ui_off_text": "",
-                    "ui": 1
+                    "default_value": "#191919",
+                    "enable_opacity": 0,
+                    "return_format": "string",
+                    "allow_in_bindings": 0
+                },
+                {
+                    "key": "field_68dbe885a86bc",
+                    "label": "Text Color",
+                    "name": "text_color",
+                    "aria-label": "",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#ffffff",
+                    "enable_opacity": 0,
+                    "return_format": "string",
+                    "allow_in_bindings": 0
                 }
             ]
         }
@@ -176,5 +134,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1759241864
+    "modified": 1759242389
 }

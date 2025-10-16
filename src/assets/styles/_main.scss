@@ -1,4 +1,4 @@
-//Custom styles start here
+// Custom styles start here
 
 // Vendors
 
@@ -10,6 +10,7 @@
 @import "common/mixin";
 @import "common/general";
 @import "common/helper";
+@import "common/trig-animation";
 
 // Components
 // @import "components/hamburger";
@@ -22,6 +23,12 @@
 @import "blocks/landing-hero";
 @import "blocks/logo-marquee";
 @import "blocks/cards";
+@import "blocks/two-list";
+@import "blocks/text-banner";
+@import "blocks/gradient-section";
+@import "blocks/spacer";
 
 // Templates
 @import "templates/page";
+@import "templates/contact";
+@import "templates/account-form";

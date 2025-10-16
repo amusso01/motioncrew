@@ -6,17 +6,19 @@ import Router from "./util/Router";
 import common from "./routes/common";
 // import home from "./routes/home";
 // import about from "./routes/about";
+import contact from "./routes/contact";
 
 import Alpine from "alpinejs";
 import focus from "@alpinejs/focus";
 
-// import part
-import navResize from "./part/navResize";
+import trig from "trig-js";
 
 /** Populate Router instance with DOM routes */
 const routes = new Router({
 	// All pages
 	common,
+	// Contact page
+	contact,
 	// Home page
 	// home,
 	// About page
@@ -30,6 +32,4 @@ document.addEventListener("DOMContentLoaded", function (event) {
 	Alpine.start();
 
 	routes.loadEvents();
-
-	navResize();
 });

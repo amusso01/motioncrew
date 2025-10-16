@@ -2,8 +2,6 @@
 $tagline = $fields['tagline'];
 $title = $fields['title'];
 $cards_row = $fields['cards_row'];
-// debug($cards_row);
-
 ?>
 
 <section class="block-cards block-padding content-block">

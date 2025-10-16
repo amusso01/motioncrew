@@ -1,0 +1,141 @@
+.page-template-contact {
+	margin-top: 66px;
+	margin-bottom: 166px;
+
+	@include media("<lg") {
+		margin-top: 33px;
+		margin-bottom: 66px;
+	}
+
+	&__grid {
+		display: grid;
+		grid-template-columns: 1fr 1.1fr;
+		column-gap: 110px;
+
+		@include media("<lg") {
+			grid-template-columns: 1fr;
+			row-gap: 56px;
+		}
+	}
+
+	.page-template-contact__info {
+		.tagline {
+			font-family: $monospace__fontname;
+			font-size: 12px;
+			line-height: 18px;
+			font-weight: 400;
+			text-transform: uppercase;
+			letter-spacing: 0.3px;
+			margin-bottom: 6px;
+		}
+
+		.title {
+			@extend .h3;
+			line-height: 1.2;
+			margin-bottom: 40px;
+
+			@include media("<lg") {
+				margin-bottom: 20px;
+			}
+		}
+
+		.subtitle,
+		.email-title,
+		.email {
+			font-family: $monospace__fontname;
+			font-size: 18px;
+			line-height: 25px;
+			font-weight: 400;
+			text-transform: uppercase;
+			letter-spacing: 0.45px;
+		}
+
+		.subtitle {
+			margin-bottom: 40px;
+
+			@include media("<lg") {
+				margin-bottom: 20px;
+			}
+		}
+
+		.email {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+
+		.email-title {
+			margin-bottom: 16px;
+			color: $color__link;
+		}
+	}
+
+	.page-template-contact__contact-form {
+		.form {
+			color: white;
+			background-color: #191919;
+			border-radius: 14px;
+			padding: 42px 35px;
+
+			@include media("<lg") {
+				padding: 20px;
+			}
+		}
+
+		.wpcf7-form {
+			label {
+				font-size: 20px;
+				font-weight: 600;
+				line-height: 24px;
+				display: block;
+
+				@include media("<lg") {
+					font-size: 18px;
+					line-height: 22px;
+				}
+
+				> span {
+					color: $color__link;
+					font-weight: 700;
+				}
+			}
+
+			.wpcf7-form-control-wrap {
+				margin-bottom: 25px;
+				margin-top: 11px;
+				display: block;
+
+				@include media("<lg") {
+					margin-bottom: 20px;
+					margin-top: 10px;
+				}
+
+				input,
+				textarea {
+					background-color: #2b2b2b;
+					border-radius: 4px;
+					padding: 22px 17px;
+					font-weight: 500;
+					font-size: 20px;
+					width: 100%;
+				}
+			}
+
+			.wpcf7-submit {
+				display: none;
+				pointer-events: none;
+			}
+		}
+		.tc {
+			margin-bottom: 32px;
+			font-size: 13px;
+			color: #afafaf;
+			line-height: 15px;
+
+			a {
+				color: $color__link;
+				text-decoration: underline;
+			}
+		}
+	}
+}

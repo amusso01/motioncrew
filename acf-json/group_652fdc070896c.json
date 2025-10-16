@@ -49,6 +49,38 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_68dbe611b48cb": {
+                    "key": "layout_68dbe611b48cb",
+                    "name": "block-gradient-section",
+                    "label": "Gradient Section",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_68dbe626b48ce",
+                            "label": "Gradient Section",
+                            "name": "block-gradient-section",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_68dbe4aaa3d49"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_68d5493037d9d": {
                     "key": "layout_68d5493037d9d",
                     "name": "block-landing-hero",
@@ -113,6 +145,38 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_68dbe45b94fa7": {
+                    "key": "layout_68dbe45b94fa7",
+                    "name": "block-text-banner",
+                    "label": "Text banner",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_68dbe4752b567",
+                            "label": "Text Banner",
+                            "name": "block-text-banner",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_68dbe08dabe9b"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_68d56c98459d2": {
                     "key": "layout_68d56c98459d2",
                     "name": "block-two-list",
@@ -144,11 +208,43 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_68dbf8eff3d84": {
+                    "key": "layout_68dbf8eff3d84",
+                    "name": "block-spacer",
+                    "label": "Spacer",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_68dbf903f3d87",
+                            "label": "Spacer",
+                            "name": "block-spacer",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_68dbf82c5756d"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "min": "",
             "max": "",
-            "button_label": "Aggiungi Blocco"
+            "button_label": "Add Section"
         }
     ],
     "location": [
@@ -171,5 +267,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1758817464
+    "modified": 1760542148
 }

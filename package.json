@@ -1,12 +1,8 @@
 {
   "name": "strapped-wordpress-starter",
   "version": "1.0.0",
-  "description": "Wordpress Starter Theme initially based on Underscores, Bootstrap 4 (with Sass), Webpack 4.",
-  "author": "JPOak",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/JPOak/strapped-wordpress-starter.git"
-  },
+  "description": "Wordpress Starter Theme",
+  "author": "Andrea Musso",
   "license": "MIT",
   "scripts": {
     "start": "yarn run clean && webpack --mode development --watch --progress --config src/build/dev.config.js",
@@ -18,7 +14,8 @@
     "@alpinejs/focus": "^3.15.0",
     "alpinejs": "^3.15.0",
     "include-media": "^1.4.10",
-    "smoothscroll-polyfill": "^0.4.4"
+    "smoothscroll-polyfill": "^0.4.4",
+    "trig-js": "^4.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",

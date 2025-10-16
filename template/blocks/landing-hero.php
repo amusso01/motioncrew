@@ -3,6 +3,9 @@ $tagline = $fields['tagline'];
 $hero_text = $fields['hero_text'];
 $subtitle = $fields['subtitle'];
 $button = $fields['button'];
+
+// Option
+$showFrame = $fields['show_frame'];
 ?>
 
 
@@ -10,10 +13,13 @@ $button = $fields['button'];
 
   <div class="content-max">
     <div class="block-landing-hero__wrapper">
-      <div class="cover cover-top-left"></div>
-      <div class="cover cover-bottom-left"></div>
-      <div class="cover cover-top-right"></div>
-      <div class="cover cover-bottom-right"></div>
+      <?php if ($showFrame) : ?>
+        <div class="cover cover-top-left"></div>
+        <div class="cover cover-bottom-left"></div>
+        <div class="cover cover-top-right"></div>
+        <div class="cover cover-bottom-right"></div>
+      <?php endif; ?>
+
 
       <?php if ($tagline) : ?>
         <p class="block-landing-hero__tagline"><?php echo $tagline; ?></p>

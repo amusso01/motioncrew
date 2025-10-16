@@ -1,0 +1,115 @@
+.block-two-list {
+	&__tagline {
+		font-family: $monospace__fontname;
+		font-size: 12px;
+		line-height: 18px;
+		font-weight: 400;
+		text-transform: uppercase;
+		letter-spacing: 0.3px;
+		margin-bottom: 5px;
+		text-align: center;
+	}
+
+	&__title {
+		@extend .h2;
+		line-height: 1;
+		text-align: center;
+		margin-bottom: 60px;
+		@include media("<lg") {
+			margin-bottom: 30px;
+		}
+		@include media("<md") {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__wrapper {
+		max-width: 1100px;
+		margin: 0 auto;
+	}
+
+	&__list-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 174px;
+		@include media("<2xl") {
+			gap: 140px;
+		}
+		@include media("<xl") {
+			gap: 100px;
+		}
+		@include media("<lg") {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+
+	.block-two-list__list-grid-item {
+		&-title {
+			font-size: 30px;
+			line-height: 34px;
+			font-weight: 400;
+			margin-bottom: 39px;
+			text-align: center;
+			@include media("<xl") {
+				margin-bottom: 30px;
+			}
+			@include media("<lg") {
+				margin-bottom: 20px;
+			}
+		}
+		&-list {
+			ul {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+				width: 100%;
+				li {
+					background-color: #fff;
+					padding: 11px 90px 11px 13px;
+					border-radius: 6px;
+					font-size: 16px;
+					line-height: 19px;
+					font-weight: 600;
+					margin-bottom: 22px;
+					display: flex;
+					align-items: center;
+					width: 100%;
+					gap: 18px;
+					@include media("<xl") {
+						margin-bottom: 15px;
+						padding: 11px 70px 11px 13px;
+					}
+					@include media("<lg") {
+						padding: 11px 50px 11px 13px;
+					}
+					@include media("<md") {
+						margin-bottom: 10px;
+						padding: 11px 30px 11px 13px;
+					}
+					span {
+						border-radius: 6px;
+						width: 42px;
+						height: 42px;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						svg {
+							width: 20px;
+							height: auto;
+						}
+					}
+				}
+			}
+		}
+		&.green-list {
+			li span {
+				background-color: #188c61;
+			}
+		}
+		&.blue-list {
+			li span {
+				background-color: #1b87e0;
+			}
+		}
+	}
+}

@@ -1,11 +1,11 @@
 {
-    "key": "group_68d548e63cbea",
-    "title": "Block Landing Hero",
+    "key": "group_68dbe4aaa3d49",
+    "title": "Block Gradient Section",
     "fields": [
         {
-            "key": "field_68d548e6ca6a4",
+            "key": "field_68dbe4aaa5527",
             "label": "",
-            "name": "block-landing-hero",
+            "name": "block-gradient-section",
             "aria-label": "",
             "type": "group",
             "instructions": "",
@@ -19,7 +19,7 @@
             "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_68dbdf537e46e",
+                    "key": "field_68dbe4aaa6724",
                     "label": "Content",
                     "name": "",
                     "aria-label": "",
@@ -37,7 +37,7 @@
                     "selected": 0
                 },
                 {
-                    "key": "field_68d5490dca6a5",
+                    "key": "field_68dbe4aaa672f",
                     "label": "Tagline",
                     "name": "tagline",
                     "aria-label": "",
@@ -58,9 +58,9 @@
                     "append": ""
                 },
                 {
-                    "key": "field_68d5547a19923",
-                    "label": "Hero Text",
-                    "name": "hero_text",
+                    "key": "field_68dbe9c8803d8",
+                    "label": "Section Title",
+                    "name": "section_title",
                     "aria-label": "",
                     "type": "wysiwyg",
                     "instructions": "",
@@ -79,7 +79,7 @@
                     "delay": 0
                 },
                 {
-                    "key": "field_68d554ab19924",
+                    "key": "field_68dbe4aaa6740",
                     "label": "Subtitle",
                     "name": "subtitle",
                     "aria-label": "",
@@ -100,24 +100,7 @@
                     "new_lines": "wpautop"
                 },
                 {
-                    "key": "field_68d554cc19925",
-                    "label": "Button",
-                    "name": "button",
-                    "aria-label": "",
-                    "type": "link",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array",
-                    "allow_in_bindings": 0
-                },
-                {
-                    "key": "field_68dbdf6b7e46f",
+                    "key": "field_68dbe4aaa6752",
                     "label": "Option",
                     "name": "",
                     "aria-label": "",
@@ -135,11 +118,67 @@
                     "selected": 0
                 },
                 {
-                    "key": "field_68dbdf7e7e470",
-                    "label": "Show Frame",
-                    "name": "show_frame",
+                    "key": "field_68dbe4dff880b",
+                    "label": "Gradient Color",
+                    "name": "gradient_color",
                     "aria-label": "",
-                    "type": "true_false",
+                    "type": "group",
+                    "instructions": "The Gradient will be a linear gradient 180°",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_68dbe518f880c",
+                            "label": "Color Stop 1",
+                            "name": "color_stop_1",
+                            "aria-label": "",
+                            "type": "color_picker",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "#191919",
+                            "enable_opacity": 0,
+                            "return_format": "string",
+                            "allow_in_bindings": 0
+                        },
+                        {
+                            "key": "field_68dbe543f880d",
+                            "label": "Color Stop 2",
+                            "name": "color_stop_2",
+                            "aria-label": "",
+                            "type": "color_picker",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "#1987E0",
+                            "enable_opacity": 0,
+                            "return_format": "string",
+                            "allow_in_bindings": 0
+                        }
+                    ]
+                },
+                {
+                    "key": "field_68dbe8650abb1",
+                    "label": "Text Color",
+                    "name": "text_color",
+                    "aria-label": "",
+                    "type": "color_picker",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -148,8 +187,27 @@
                         "class": "",
                         "id": ""
                     },
+                    "default_value": "#ffffff",
+                    "enable_opacity": 0,
+                    "return_format": "string",
+                    "allow_in_bindings": 0
+                },
+                {
+                    "key": "field_68dbf7d372f63",
+                    "label": "Add Padding",
+                    "name": "add_padding",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "Add padding top and bottom of the element block",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
                     "message": "",
-                    "default_value": 1,
+                    "default_value": 0,
                     "allow_in_bindings": 0,
                     "ui_on_text": "",
                     "ui_off_text": "",
@@ -176,5 +234,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1759241864
+    "modified": 1759246930
 }
